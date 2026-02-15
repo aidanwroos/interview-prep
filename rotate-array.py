@@ -23,13 +23,13 @@ def rotate_array(array, d):
     first_element = array[i]
     first_index = i
     
-    # process elements in the cycle
+    # process all elements in the cycle
     while True:
 
-      # calculating next element in the cycle
+      # calculating index of the next element in the cycle
       next_index = (first_index + d) % n
 
-      # we made it back to the first element, break
+      # we made it back to the first element, break loop
       if next_index == i:
         break
 
