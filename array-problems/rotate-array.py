@@ -1,87 +1,47 @@
-# given array of integers arr[], rotate elements to the left
-# by d positions
-# juggling algorithm O(n)
-
-# the main idea:
-# we're going to rotate the array through cycles. Each cycle
-# is independent of one another.
-# For any index i in the array, after the rotation we will
-# have arr[(i + d) % n] at index i and so on
-
-# How many independent cycles?
-# If array of size n is rotated by d places, the number
-# of independent cycles is gcd(n, d).
-
-# Number of elements in each cycle?
-# Distance travelled in each cycle is a multiple of n defined as
-# lcm(n, d)
-# So number of elements in each cycle = lcm(n, d) / d.
-
-# To cover all n elements, total number of cycles is n * lcm(n, d)/d = gcd(n, d)
-
+# juggling algorithm solution
+# O(n) time, O(1) space
 import math
 
 
-array = [1, 2, 3, 4, 5, 6]
+array = [1, 2, 3, 4, 5, 6, 7, 8]
 
 
-def rotate_array_left(array, d):
+def rotate_array(array, d):
+  # length of the array
+  n = len(array)
 
-    array_length = len(array)
+  # capture case where # steps > number of elements in array
+  d = d % n
+  
+  # number of cycles determined by gcd of array length and num steps
+  c = math.gcd(n, d)
 
-    # case if number of rotations d is > than array length
-    if(d > array_length):
-        d = d % array_length
+  # process each individual cycle
+  for i in range(c):
 
-    # calulate number of independent cycles
-    c = math.gcd(array_length, d)
+    # the first element and its index in the cycle
+    first_element = array[i]
+    first_index = i
+    
+    # process all elements in the cycle
+    while True:
 
+      # calculating index of the next element in the cycle
+      next_index = (first_index + d) % n
 
-    # process each individual cycle
-    for i in range (0, c):
+      # we made it back to the first element, break loop
+      if next_index == i:
+        break
 
-        # first element in the cycle
-        starting_element = array[i]
+      # place the element, move first index to next index
+      array[first_index] = array[next_index]
+      first_index = next_index
 
-        # index of first element in current cycle
-        currentIdx = i
+    # set first element in the cycle, using first_index
+    array[first_index] = first_element
 
-        # next element index
-        nextIdx = 0
-
-        # process all elements in the cycle
-        while True:
-            # next element in the cycle
-            nextIdx = (currentIdx + d) % array_length
-
-            # did full rotation, cuz we reached the starting index again
-            if(nextIdx == i):
-                break
-            
-            # update the next index w/ current element
-            array[currentIdx] = array[nextIdx]
-            currentIdx = nextIdx
-
-        array[currentIdx] = starting_element
-
-    return array
-
- 
-def rotate_array_right(array, d):
-
-    n = len(array)
-
-    d = d % n
-
-    c = math.gcd(d, n)
-
-    for i in range(0, c):
-        
-        
+  return array
 
 
-
-
-print(f"Original: {array}")
-print(f"Rotated left: {rotate_array_left(array, 2)}")
-print(f"Rotated right: {rotate_array_right(array, 2)}")
+print(f"Original array: {array}")
+print(f"Rotated array: {rotate_array(array, 2)}")
