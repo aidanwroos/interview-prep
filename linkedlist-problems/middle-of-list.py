@@ -1,6 +1,5 @@
 # given head of linked list, return the middle node of the list
-# 1. Two Pass approach O(n) time, O(1) space
-# 2. Hare and Tortoise approach O(n) time, O(1) space
+
 from classes import LinkedList, Node
 
 
