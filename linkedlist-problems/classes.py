@@ -25,7 +25,7 @@ class LinkedList:
         while current:
             elements.append(current.data)
             current = current.next
-        print(" -> ".join(map(str, elements)))
+        return " -> ".join(map(str, elements))
 
     def get_length(self):
         length = 0

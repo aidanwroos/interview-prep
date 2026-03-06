@@ -36,6 +36,6 @@ ll = LinkedList()
 for i in range(10):
     ll.append(i)
 
-ll.display()
+print(f"{ll.display()}")
 print(f"{twoPass(ll)}")
 print(f"{hareAndTortoise(ll)}")
