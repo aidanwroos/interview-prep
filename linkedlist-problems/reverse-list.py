@@ -15,7 +15,9 @@ def reverseList(ll):
         current.next = prev
         prev = current
         current = nextNode
-
+    
+    # after breaking, current is now None, 
+    # meaning prev is the last node. Set head to it.
     ll.head = prev
 
 
