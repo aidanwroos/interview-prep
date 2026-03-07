@@ -26,6 +26,18 @@ class LinkedList:
             elements.append(current.data)
             current = current.next
         return " -> ".join(map(str, elements))
+    
+    # Safe for dislaying cyclical lists, w/out looping forever!
+    # (Used in detectCycle.py for the test lists)
+    def display_safe(self, steps):
+        elements = []
+        current = self.head
+        for _ in range(steps):
+            if current is None:
+                break
+            elements.append(current.data)
+            current = current.next
+        return " -> ".join(map(str, elements))
 
     def get_length(self):
         length = 0
@@ -34,5 +46,4 @@ class LinkedList:
         while current:
             length += 1
             current = current.next
-
         return length
