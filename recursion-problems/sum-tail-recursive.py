@@ -30,7 +30,7 @@ print(tailRecurse(array, arr_len, 0))
 
 # ex stack trace:
 # tailRecurse([1,2,3,4,5], n=5, sum=0) --> 0
-#   tailRecurse([1,2,3,4,5], n=4, sum=5) --> 0+5=15
+#   tailRecurse([1,2,3,4,5], n=4, sum=5) --> 0+5=5
 #      tailRecurse([1,2,3,4,5], n=3, sum=9) --> 5+4=9
 #         tailRecurse([1,2,3,4,5], n=2, sum=12) --> 9+3=12
 #            tailRecurse([1,2,3,4,5], n=1, sum=14) --> 12+2=14
