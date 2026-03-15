@@ -4,12 +4,20 @@
 # It begins 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 and so on
 
 
-def findFibonacci(int n):
+def findFibonacci(n):
 
-  if n == 0 or n == 1:
-    return n
+  if n == 0:
+    return 0
+  elif n == 1:
+    return 1
+  else:
+    return findFibonacci(n-2) + findFibonacci(n-1)
 
 
+answer = []
+number = 20
+for i in range(number):
+  answer.append(findFibonacci(i))
 
-number = 10
-print(findFibonacci(number))
+for a in answer:
+  print(a, end=' ')
