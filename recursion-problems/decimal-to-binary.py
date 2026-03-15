@@ -16,7 +16,7 @@ decimal = 12
 print(recursiveConvert(decimal))
 
 
-# ex output:
+# ex stack trace:
 # recursiveConvert(10//2 = 5)
 #   recursiveConvert(5//2 = 2)
 #     recursiveConvert(2//2 = 1)
