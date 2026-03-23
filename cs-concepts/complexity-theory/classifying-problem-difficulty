@@ -1,1 +1,37 @@
+Discussion
 
+---------------------------------------------------------------------------------------------------------------------
+
+Q: How can we classify problems based on how difficult (hard) they are to solve?
+A: We use several different complexity classes to classify a problem based on how difficult it is to solve.
+
+  P - (Polynomial time) problems that are solvable in polynomial time. These are problems that computers can solve 
+       efficiently. Problems within this class live within O(n), O(nlogn), O(n^2), and O(n^3)
+
+  NP - (Nondeterministic polynomial time) If someone hands you a solution, you can verify it quickly. This doesn't
+       mean finding the solution would be quick also, might actually be very slow. NP includes all problmes in P,
+       plus harder problems. Decision problems (deciding whether a proposed solution is true or false)
+
+  NP-Complete - (NPC) These are the hardest problems in NP. Every NP problem can be reduced to these in polynomial
+                time. If you solve one NP-Complete problem efficiently, you solve all fo NP.
+
+  NP-Hard - At least as hard as the hardest problems in NP, but not necessarily in NP themselves
+
+---------------------------------------------------------------------------------------------------------------------
+
+Q: How can we frame problems?
+A: The way you frame a problem determines which tools and techniques you apply to it.
+
+  Decision - yes or no answer
+
+  Optimization - find the best answer
+
+  Counting - how many solutions exist
+
+  Search - find any valid solution (not necessarily best)
+
+  Function - compute an output for every input
+
+---------------------------------------------------------------------------------------------------------------------
+
+  
