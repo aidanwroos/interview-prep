@@ -29,3 +29,6 @@ print(sumArray(array, arr_len))
 # arr[5-1=4] = 5 
 
 # 1 + 2 + 3 + 4 + 5 = 15
+
+
+
