@@ -26,7 +26,7 @@ class LinkedList:
       current = self.head
       while current.next is not None: #walk to end of list
         current = current.next
-      current.next = new_node    #attach newnode to end
+      current.next = new_node         #attach newnode to end
     self.nodes += 1
 
 
